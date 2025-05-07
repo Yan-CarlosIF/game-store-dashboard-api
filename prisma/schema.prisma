@@ -1,0 +1,102 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../prisma/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Cliente {
+  cpf        String   @id
+  telefone   String
+  nome       String
+  email      String
+  rua        String
+  cidade     String
+  numeroCasa Int      @map("numero_casa")
+  pedidos    Pedido[] @relation("cliente_pedidos")
+
+  @@map("cliente")
+}
+
+model Pedido {
+  id         String          @id @default(uuid())
+  valorTotal Float           @map("valor_total")
+  status     Status
+  data       DateTime
+  cpfCliente String          @map("cpf_cliente")
+  cliente    Cliente         @relation("cliente_pedidos", fields: [cpfCliente], references: [cpf])
+  produtos   ProdutoPedido[]
+
+  @@map("pedido")
+}
+
+enum Status {
+  CANCELED
+  SHIPPING
+  DELIVERED
+
+  @@map("status")
+}
+
+model Produto {
+  id         String          @id @default(uuid())
+  nome       String
+  preco      Float
+  descricao  String
+  estoque    Int
+  jogo       Jogo?
+  eletronico ItemEletronico?
+  generos    Genero[]
+  pedidos    ProdutoPedido[]
+
+  @@map("produto")
+}
+
+model ProdutoPedido {
+  id         String  @id @default(uuid())
+  quantidade Int
+  subTotal   Float   @map("sub_total")
+  idPedido   String  @map("id_pedido")
+  idProduto  String  @map("id_produto")
+  pedido     Pedido  @relation(fields: [idPedido], references: [id])
+  produto    Produto @relation(fields: [idProduto], references: [id])
+
+  @@map("produto_pedido")
+}
+
+model Jogo {
+  idProduto      String   @id @map("id_produto")
+  desenvolvedora String
+  dataLancamento DateTime @map("data_lancamento")
+  plataforma     String
+  produto        Produto  @relation(fields: [idProduto], references: [id])
+
+  @@map("jogo")
+}
+
+model ItemEletronico {
+  idProduto  String  @id @map("id_produto")
+  fabricante String
+  tipo       String
+  produto    Produto @relation(fields: [idProduto], references: [id])
+
+  @@map("item_eletronico")
+}
+
+model Genero {
+  id        Int     @id @default(autoincrement())
+  nome      String
+  idProduto String  @map("id_produto")
+  produto   Produto @relation(fields: [idProduto], references: [id])
+
+  @@map("genero")
+}

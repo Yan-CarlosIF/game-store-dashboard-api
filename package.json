@@ -1,0 +1,30 @@
+{
+  "name": "dashboard-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch src/app.ts",
+    "seed": "tsx prisma/seed.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.10.0",
+  "devDependencies": {
+    "@eslint/js": "^9.26.0",
+    "@types/node": "^22.15.3",
+    "eslint": "^9.26.0",
+    "globals": "^16.0.0",
+    "prisma": "^6.7.0",
+    "typescript-eslint": "^8.31.1"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.7.0",
+    "@fastify/cors": "^11.0.1",
+    "@prisma/client": "^6.7.0",
+    "fastify": "^5.3.2",
+    "tsx": "^4.19.4"
+  }
+}
