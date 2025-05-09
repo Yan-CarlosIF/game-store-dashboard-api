@@ -7,7 +7,7 @@ import { orderRoutes } from "./routes/order.routes";
 const app = fastify();
 
 app.register(fastifyCors, {
-  origin: ["http://localhost:3000"],
+  origin: ["http://localhost:3000", "https://games-store-dashboard.vercel.app"],
   methods: ["GET", "PATCH", "DElETE", "POST"],
   credentials: true,
 });
