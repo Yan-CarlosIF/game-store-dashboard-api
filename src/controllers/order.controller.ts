@@ -1,17 +1,26 @@
 import { prisma } from "@/lib/prisma";
 import { FastifyReply, FastifyRequest } from "fastify";
 
+import { $Enums } from "../../prisma/generated/prisma/client";
+
+type Status = $Enums.Status;
+
 interface getQuery {
   include: {
     cliente: true;
-    produtos: true;
+    produtos: {
+      include: {
+        produto: true;
+      };
+    };
   };
-  where?: { status: { equals: "DELIVERED" | "CANCELED" } };
+  where?: { status: { equals: Status } };
 }
 
 interface getQueryParams {
   delivered: string;
   canceled: string;
+  shipping: string;
 }
 
 export async function getOrders(
@@ -22,18 +31,32 @@ export async function getOrders(
     const query: getQuery = {
       include: {
         cliente: true,
-        produtos: true,
+        produtos: {
+          include: {
+            produto: true,
+          },
+        },
       },
     };
 
-    const { delivered, canceled } = req.query;
+    const { delivered, canceled, shipping } = req.query;
 
-    let statusFilter: "DELIVERED" | "CANCELED" | undefined = undefined;
+    let statusFilter: Status | undefined = undefined;
 
-    if (delivered === "true" && canceled !== "true") {
+    if (delivered === "true" && canceled !== "true" && shipping !== "true") {
       statusFilter = "DELIVERED";
-    } else if (canceled === "true" && delivered !== "true") {
+    } else if (
+      canceled === "true" &&
+      delivered !== "true" &&
+      shipping !== "true"
+    ) {
       statusFilter = "CANCELED";
+    } else if (
+      shipping === "true" &&
+      delivered !== "true" &&
+      canceled !== "true"
+    ) {
+      statusFilter = "SHIPPING";
     }
 
     if (statusFilter) query.where = { status: { equals: statusFilter } };

@@ -7,6 +7,8 @@ export async function getProducts(req: FastifyRequest, reply: FastifyReply) {
       include: {
         jogo: true,
         eletronico: true,
+        generos: true,
+        pedidos: true,
       },
     });
 
