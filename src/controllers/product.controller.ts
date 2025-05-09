@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { FastifyReply, FastifyRequest } from "fastify";
 
-export async function getProducts(req: FastifyRequest, reply: FastifyReply) {
+export async function getProducts(_req: FastifyRequest, reply: FastifyReply) {
   try {
     const products = await prisma.produto.findMany({
       include: {
@@ -14,7 +14,9 @@ export async function getProducts(req: FastifyRequest, reply: FastifyReply) {
 
     return reply.status(200).send(products);
   } catch (err) {
-    return reply.status(404).send({ err });
+    return reply
+      .status(404)
+      .send({ error: "Products não encontrados", details: err });
   }
 }
 

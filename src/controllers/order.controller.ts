@@ -65,6 +65,8 @@ export async function getOrders(
 
     return reply.status(200).send(orders);
   } catch (err) {
-    return reply.status(404).send({ err });
+    return reply
+      .status(404)
+      .send({ error: "Pedidos não encontrados", details: err });
   }
 }
