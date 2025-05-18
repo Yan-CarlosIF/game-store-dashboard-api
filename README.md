@@ -29,7 +29,7 @@ API simples para gerenciamento de **clientes**, **produtos** (jogos e eletrônic
  ┃ ┣ 📂 controllers        → controllers de cada rota
  ┃ ┣ 📂 lib                → Instância do Prisma
  ┃ ┣ 📂 routes             → Rotas para clientes, produtos e pedidos
- ┃ ┗ server.ts           → Arquivo principal da aplicação
+ ┃ ┗ app.ts           → Arquivo principal da aplicação
  ┣ .env                  → Variáveis de ambiente (ex: conexão com banco)
  ┣ package.json
  ┗ tsconfig.json
