@@ -1,4 +1,3 @@
-// data/jogos.ts
 export const jogos = [
   {
     nome: "Final Fantasy VII Rebirth",
@@ -8,6 +7,7 @@ export const jogos = [
     desenvolvedora: "Square Enix",
     dataLancamento: new Date("2024-02-29"),
     plataforma: "PS5",
+    generos: ["RPG", "Ação", "Fantasia"],
   },
   {
     nome: "Silent Hill 2 Remake",
@@ -17,6 +17,7 @@ export const jogos = [
     desenvolvedora: "Bloober Team",
     dataLancamento: new Date("2024-10-20"),
     plataforma: "PS5",
+    generos: ["Terror", "Ação"],
   },
   {
     nome: "Astro Bot",
@@ -26,6 +27,7 @@ export const jogos = [
     desenvolvedora: "Team Asobi",
     dataLancamento: new Date("2024-06-15"),
     plataforma: "PS5",
+    generos: ["Plataforma", "Aventura"],
   },
   {
     nome: "Dragon Age: The Veilguard",
@@ -35,6 +37,7 @@ export const jogos = [
     desenvolvedora: "BioWare",
     dataLancamento: new Date("2024-09-10"),
     plataforma: "PC",
+    generos: ["RPG", "Fantasia", "Aventura"],
   },
   {
     nome: "Helldivers 2",
@@ -44,6 +47,7 @@ export const jogos = [
     desenvolvedora: "Arrowhead Game Studios",
     dataLancamento: new Date("2024-03-08"),
     plataforma: "PS5",
+    generos: ["Tiro", "Cooperativo", "Ação", "Sci-fi"],
   },
   {
     nome: "Black Myth: Wukong",
@@ -53,6 +57,7 @@ export const jogos = [
     desenvolvedora: "Game Science",
     dataLancamento: new Date("2024-08-19"),
     plataforma: "PC",
+    generos: ["Ação", "Hack and Slash", "Fantasia"],
   },
   {
     nome: "Marvel Rivals",
@@ -62,6 +67,7 @@ export const jogos = [
     desenvolvedora: "NetEase",
     dataLancamento: new Date("2024-12-01"),
     plataforma: "PS5",
+    generos: ["Shooter", "Multijogador", "Gratuito para jogar"],
   },
   {
     nome: "Like a Dragon: Infinite Wealth",
@@ -71,6 +77,7 @@ export const jogos = [
     desenvolvedora: "Ryu Ga Gotoku Studio",
     dataLancamento: new Date("2024-11-05"),
     plataforma: "PS5",
+    generos: ["JRPG", "RPG", "Ação"],
   },
   {
     nome: "Elden Ring: Shadow of the Erdtree",
@@ -80,6 +87,7 @@ export const jogos = [
     desenvolvedora: "FromSoftware",
     dataLancamento: new Date("2024-07-22"),
     plataforma: "PC",
+    generos: ["RPG", "Ação", "Expansão", "Fantasia"],
   },
   {
     nome: "Call of Duty: Black Ops 6",
@@ -89,6 +97,7 @@ export const jogos = [
     desenvolvedora: "Treyarch",
     dataLancamento: new Date("2024-10-15"),
     plataforma: "PS5",
+    generos: ["Tiro", "Ação", "Multijogador"],
   },
   {
     nome: "Prince of Persia: The Lost Crown",
@@ -98,6 +107,7 @@ export const jogos = [
     desenvolvedora: "Ubisoft",
     dataLancamento: new Date("2024-01-18"),
     plataforma: "PS5",
+    generos: ["Plataforma", "Aventura", "Ação"],
   },
   {
     nome: "Tekken 8",
@@ -107,6 +117,7 @@ export const jogos = [
     desenvolvedora: "Bandai Namco",
     dataLancamento: new Date("2024-09-30"),
     plataforma: "PS5",
+    generos: ["Luta", "Ação"],
   },
   {
     nome: "The Legend of Zelda: Echoes of Wisdom",
@@ -116,6 +127,7 @@ export const jogos = [
     desenvolvedora: "Nintendo",
     dataLancamento: new Date("2024-05-12"),
     plataforma: "Switch",
+    generos: ["Aventura", "Fantasia", "RPG"],
   },
   {
     nome: "Star Wars Outlaws",
@@ -125,6 +137,7 @@ export const jogos = [
     desenvolvedora: "Massive Entertainment",
     dataLancamento: new Date("2024-11-20"),
     plataforma: "PS5",
+    generos: ["Mundo Aberto", "Aventura", "Sci-fi", "Ação"],
   },
   {
     nome: "Metaphor: ReFantazio",
@@ -134,6 +147,7 @@ export const jogos = [
     desenvolvedora: "Studio Zero",
     dataLancamento: new Date("2024-08-05"),
     plataforma: "PS5",
+    generos: ["JRPG", "Fantasia", "RPG"],
   },
   {
     nome: "Diablo IV: Vessel of Hatred",
@@ -143,6 +157,7 @@ export const jogos = [
     desenvolvedora: "Blizzard Entertainment",
     dataLancamento: new Date("2024-10-28"),
     plataforma: "PC",
+    generos: ["RPG", "Ação", "Expansão"],
   },
   {
     nome: "Super Mario Party Jamboree",
@@ -152,6 +167,7 @@ export const jogos = [
     desenvolvedora: "Nintendo",
     dataLancamento: new Date("2024-06-22"),
     plataforma: "Switch",
+    generos: ["Party Game", "Multijogador", "Plataforma"],
   },
   {
     nome: "Frostpunk 2",
@@ -161,6 +177,7 @@ export const jogos = [
     desenvolvedora: "11 Bit Studios",
     dataLancamento: new Date("2024-09-14"),
     plataforma: "PC",
+    generos: ["Estratégia", "Sobrevivência", "Simulação"],
   },
   {
     nome: "Stellar Blade",
@@ -170,6 +187,7 @@ export const jogos = [
     desenvolvedora: "Shift Up",
     dataLancamento: new Date("2024-07-08"),
     plataforma: "PS5",
+    generos: ["Ação", "Sci-fi", "Hack and Slash"],
   },
   {
     nome: "Wuthering Waves",
@@ -179,5 +197,6 @@ export const jogos = [
     desenvolvedora: "Kuro Games",
     dataLancamento: new Date("2024-12-10"),
     plataforma: "PC",
+    generos: ["RPG", "Mundo Aberto", "Gratuito para jogar", "Ação"],
   },
 ];

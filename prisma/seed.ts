@@ -21,7 +21,7 @@ async function main() {
     await prisma.cliente.create({ data: cliente });
   }
 
-  // Inserir jogos
+  // Inserir jogos com gêneros
   for (const jogo of jogos) {
     const produto = await prisma.produto.create({
       data: {
@@ -40,6 +40,16 @@ async function main() {
         plataforma: jogo.plataforma,
       },
     });
+
+    // Criar entradas de gêneros relacionados a esse produto
+    for (const nomeGenero of jogo.generos) {
+      await prisma.genero.create({
+        data: {
+          nome: nomeGenero,
+          idProduto: produto.id,
+        },
+      });
+    }
   }
 
   // Inserir eletrônicos
