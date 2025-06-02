@@ -35,7 +35,7 @@ API simples para gerenciamento de **clientes**, **produtos** (jogos e eletrônic
  ┗ tsconfig.json
 ```
 
-## Deploy: [Railway](https://game-store-dashboard-api-production.up.railway.app/)
+## Deploy: [Render](https://game-store-dashboard-api.onrender.com)
 
 ---
 
